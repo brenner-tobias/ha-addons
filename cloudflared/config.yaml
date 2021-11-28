@@ -1,6 +1,6 @@
 ---
 name: Cloudflared
-version: 0.1.1
+version: 0.1.2
 slug: cloudflared
 description: >
   Add-On to use a Cloudflared tunnel (formerly Argo Tunnel)
