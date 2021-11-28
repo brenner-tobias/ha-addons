@@ -25,7 +25,7 @@ https://github.com/brenner-tobias/ha-addons
 
 ### &#10003; [Cloudflared][addon-cloudflared]
 
-![Latest Version][cloudflared-version-shield]
+![Latest Version][cloudflared-release-shield]
 ![Supports armhf Architecture][cloudflared-armhf-shield]
 ![Supports armv7 Architecture][cloudflared-armv7-shield]
 ![Supports aarch64 Architecture][cloudflared-aarch64-shield]
@@ -67,7 +67,7 @@ SOFTWARE.
 [cloudflared-armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [cloudflared-armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [cloudflared-i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
-[cloudflared-version-shield]: https://img.shields.io/badge/version-v0.1.0-blue.svg
+[cloudflared-release-shield]: https://img.shields.io/github/release/brenner-tobias/addon-cloudflared
 [license-shield]: https://img.shields.io/github/license/brenner-tobias/ha-addons
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2021.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
