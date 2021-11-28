@@ -17,7 +17,7 @@ connection.
 
 **To use this add-on you have to own a domain name (e.g. example.com) and use the
 DNS servers of cloudflare. If you do not have a domain name, you can register a
-free one at [freenom][freenom]**
+free one at [freenom][freenom]**.
 
 [freenom]: https://freenom.com
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2021.svg
