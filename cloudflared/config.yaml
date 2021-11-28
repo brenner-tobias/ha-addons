@@ -1,6 +1,6 @@
 ---
 name: Cloudflared
-version: 0.1.3
+version: 0.1.4
 slug: cloudflared
 description: >
   Add-On to use a Cloudflared tunnel (formerly Argo Tunnel)
@@ -19,10 +19,9 @@ options:
   external_hostname: ""
   internal_ha_port: "8123"
   tunnel_name: homeassistant
-  reset_cloudflared_files: false
 schema:
   external_hostname: str
   internal_ha_port: port
   tunnel_name: str
-  reset_cloudflared_files: bool
+  reset_cloudflared_files: bool?
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
