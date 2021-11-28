@@ -1,3 +1,5 @@
 ## What’s changed
 
-- 🎉 Initial Release of add-on Cloudflared 0.1.0
+- Changed folder of Cloudflared files to /data/ for persistent storage
+- Included a reset option in the config to delete all existing cloudflared files
+- Optimised logging
