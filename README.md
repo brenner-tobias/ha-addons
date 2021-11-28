@@ -68,5 +68,6 @@ SOFTWARE.
 [cloudflared-armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [cloudflared-i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [cloudflared-version-shield]: https://img.shields.io/badge/version-v0.1.0-blue.svg
+[license-shield]: https://img.shields.io/github/license/brenner-tobias/ha-addons
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2021.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
