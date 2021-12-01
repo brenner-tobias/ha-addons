@@ -18,6 +18,9 @@ connection.
 **To use this add-on, you have to own a domain name (e.g. example.com) and use the
 DNS servers of cloudflare.**
 
+**Note**: _This add-on needs the Admin API role in order to get the internal
+IP of Nginx Proxy Manager, in case it is used with the tunnel_
+
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2021.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
 [releases-shield]: https://img.shields.io/github/v/release/brenner-tobias/addon-cloudflared?include_prereleases
