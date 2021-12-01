@@ -1,3 +1,7 @@
+## v0.1.6
+
+- Added tunnel connection to Nginxproxymanager
+
 ## v0.1.5
 
 - Optimised reset

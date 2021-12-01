@@ -6,13 +6,17 @@ Internet without opening ports in your router. Additionally, you can utilize
 Cloudflare Teams, their Zero Trust platform to further secure your Home Assistant
 connection.
 
-**To use this add-on you have to own a domain name (e.g. example.com) and use the
-DNS servers of cloudflare.**
+**To use this add-on, you have to own a domain name (e.g. example.com) and use the
+DNS servers of Cloudflare.**
 
 ## Installation
 
 The installation of this add-on is pretty straightforward but requires some prerequisites
-and a manual step at the first set-up:
+and a manual step at the first set-up.
+
+**Before starting, please make sure to remove all other add-ons or configuration
+entries handling SSL certificates, domain names and so on (e.g. DuckDNS) and
+restart your HomeAssistant instance.**
 
 1. (Optional if you don't yet have a working Cloudflare set-up):
    Get a domain name and set-up Cloudflare. See section
@@ -26,9 +30,9 @@ and a manual step at the first set-up:
    no existing tunnel with your desired tunnel name at Cloudflare**.
 1. Start the "Cloudflare" add-on.
 1. Check the logs of the "Cloudflare" add-on and **follow the instruction to authenticate
-   at cloudflare**.
+   at Cloudflare**.
    You need to copy a URL from the logs and visit it to authenticate.
-1. A tunnel and a DNS entry will be created and show up in your cloudflare DNS /
+1. A tunnel and a DNS entry will be created and show up in your Cloudflare DNS /
    Teams dashboard.
 
 ## Configuration
@@ -49,9 +53,10 @@ tunnel_name: homeassistant
 
 Since HomeAssistant blocks requests via proxies or reverse proxies, you have to tell
 your instance to allow requests from the Cloudflared Add-On. The add-on runs locally,
-so HA hasto trust the docker network. In order to do so, add the following lines
-to your /config/configuration.yaml (if you need assistance changing the config,
-please follow the [Advanced Configuration Tutorial][advancedconfiguration]):
+so HA has to trust the docker network. In order to do so, add the following lines
+to your /config/configuration.yaml and restart your HA instance.
+(if you need assistance changing the config, please follow the
+[Advanced Configuration Tutorial][advancedconfiguration]):
 
 ```yaml
 http:
@@ -59,6 +64,22 @@ http:
   trusted_proxies:
     - 172.30.33.0/24
 ```
+
+### Option: `nginxproxymanager`
+
+If you want to use the Cloudflare Tunnel with the Add-On
+[Nginx Proxy Manager][nginxproxymanager], you can do so by setting this option.
+
+**Note**: _This will still route your defined `external_hostname` to HomeAssistant
+and any other incoming domain to Nginx Proxy Manager._
+
+In order to route multiple sub-domains through the tunnel, you have to create individual
+CNAME records in Cloudflare for all of them, pointing to your `external_hostname`
+(or directly to the tunnel URL that you can get from the CNAME entry of
+`external_hostname`).
+
+Finally, you have to set-up your proxy hosts in Nginx Proxy Manager and forward
+them to wherever you like.
 
 ### Option: `log_level`
 
@@ -78,6 +99,15 @@ more severe level, e.g., `debug` also shows `info` messages. By default,
 the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
 
+### Option: `reset_cloudflared_files`
+
+In case something went wrong or you want to reset your Cloudflare tunnel
+for some other reason (e.g., switch to another Cloudflare account), you can reset
+all your local Cloudflare files by setting this option to `true`.
+
+**Note**: _After deleting the files, the option `reset_cloudflared_files` will
+automaticaly be removed from the add-on configuration._
+
 ## Domain Name and Cloudlfare Set-Up
 
 To use this plugin, you need a domain name that is using Cloudflare for its
@@ -85,9 +115,7 @@ DNS entries.
 
 ### Domain Name
 
-If you do not already have a domain name, get one. In case you dont want
-to pay for a domain name, you can look for a free domain name at
-[freenom][freenom].
+If you do not already have a domain name, get one.
 
 ### Cloudflare
 
@@ -126,4 +154,5 @@ SOFTWARE.
 [cloudflare]: https://www.cloudflare.com/
 [cloudflaretutorial]: https://support.cloudflare.com/hc/en-us/articles/360027989951-Getting-Started-with-Cloudflare
 [freenom]: https://freenom.com
+[nginxproxymanager]: https://github.com/hassio-addons/addon-nginx-proxy-manager
 [tobias]: https://github.com/brenner-tobias
