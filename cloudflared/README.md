@@ -19,7 +19,7 @@ connection.
 DNS servers of cloudflare.**
 
 **Note**: _This add-on needs the Admin API role in order to get the internal
-IP of Nginx Proxy Manager, in case it is used with the tunnel_
+IP of Nginx Proxy Manager, in case it is used with the tunnel._
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2021.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
