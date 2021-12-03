@@ -1,3 +1,7 @@
+## v0.1.7
+
+- Changed startup config to default "Application" to avoid race-condition with Nginxproxymanager
+
 ## v0.1.6
 
 - Added tunnel connection to Nginxproxymanager
