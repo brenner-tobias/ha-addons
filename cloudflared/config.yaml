@@ -1,6 +1,6 @@
 ---
 name: Cloudflared
-version: 0.1.7
+version: 0.1.8
 slug: cloudflared
 description: >
   Use a Cloudflared tunnel (formerly Argo Tunnel)
