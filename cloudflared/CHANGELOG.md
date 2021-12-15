@@ -1,3 +1,8 @@
+## v0.1.8
+
+- Bump Cloudflared to 2021.12.0
+- Force DNS creation if there is an existing entry
+
 ## v0.1.7
 
 - Changed startup config to default "Application" to avoid race-condition with Nginxproxymanager
