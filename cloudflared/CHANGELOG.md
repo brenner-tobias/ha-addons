@@ -1,3 +1,9 @@
+## v0.1.9
+
+- Bump Cloudflared to 2022.1.0
+- Disabled Auto-Update of Cloudflared
+- Automatically detect HA port, removed config option
+
 ## v0.1.8
 
 - Bump Cloudflared to 2021.12.0
