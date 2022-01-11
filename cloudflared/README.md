@@ -22,7 +22,7 @@ DNS servers of Cloudflare. If you do not have one, you can get one for free at
 **Note**: _This add-on needs the Admin API role in order to get the internal
 IP of Nginx Proxy Manager, in case it is used with the tunnel._
 
-[domainarticle]: https://www.linkedin.com/feed/update/urn:li:ugcPost:6886392241577893888?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3AugcPost%3A6886392241577893888%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29
+[domainarticle]: https://www.linkedin.com/pulse/what-do-domain-name-how-get-one-free-tobias-brenner?trk=public_post-content_share-article
 [freenom]: https://freenom.com
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2022.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
