@@ -1,4 +1,7 @@
 ## v0.2.1
+- Fixed config parameter name
+
+## v0.2.1
 - Bump Cloudflared to 2022.1.2
 
 ## v0.2.0
