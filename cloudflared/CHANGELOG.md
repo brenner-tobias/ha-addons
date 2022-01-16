@@ -1,3 +1,9 @@
+## v0.2.1
+- Bump Cloudflared to 2022.1.2
+
+## v0.2.0
+- Added possibility to configure additional hosts to forward to
+
 ## v0.1.9
 
 - Bump Cloudflared to 2022.1.0
