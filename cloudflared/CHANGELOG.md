@@ -1,3 +1,7 @@
+## v0.2.3
+- Changed Cloudflared config datatype to JSON
+- Enable additional_hosts via https
+
 ## v0.2.2
 - Fixed config parameter name
 
