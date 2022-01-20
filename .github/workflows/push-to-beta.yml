@@ -25,7 +25,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: ${{ GITHUB_WORKSPACE }}
+          source-directory: '~'
           destination-github-username: 'brenner-tobias'
           destination-repository-name: 'ha-addons-beta'
           user-email: 19689801+brenner-tobias@users.noreply.github.com
