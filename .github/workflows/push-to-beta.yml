@@ -1,7 +1,7 @@
-# This workflow pushes the main branch to the beta repo
-
+---
 name: Push to beta repo
 
+# yamllint disable-line rule:truthy
 on:
   push:
     branches: [ main ]
@@ -21,4 +21,12 @@ jobs:
       
       # Runs a set of commands using the runners shell
       - name: Pushes to beta repository
-        run: pwd
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: '/home/runner/work/ha-addons/ha-addons'
+          destination-github-username: 'brenner-tobias'
+          destination-repository-name: 'ha-addons-beta'
+          user-email: 19689801+brenner-tobias@users.noreply.github.com
+          target-branch: main
