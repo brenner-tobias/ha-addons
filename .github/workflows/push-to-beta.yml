@@ -18,15 +18,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      
       # Runs a set of commands using the runners shell
       - name: Pushes to beta repository
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory: ''
-          destination-github-username: 'brenner-tobias'
-          destination-repository-name: 'ha-addons-beta'
-          user-email: 19689801+brenner-tobias@users.noreply.github.com
-          target-branch: main
+        run: pwd
