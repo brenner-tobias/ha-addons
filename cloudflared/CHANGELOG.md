@@ -1,3 +1,8 @@
+## v0.2.4
+- Add originRequest support for disableChunkedEncoding flag for additional_hosts
+- Change hassio_role from admin to manager
+- Improve Documentation
+
 ## v0.2.3
 - Changed Cloudflared config datatype to JSON
 - Enable additional_hosts via https

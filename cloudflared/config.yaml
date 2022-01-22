@@ -1,6 +1,6 @@
 ---
 name: Cloudflared
-version: 0.2.3
+version: 0.2.4
 slug: cloudflared
 description: >
   Use a Cloudflared tunnel (formerly Argo Tunnel)
@@ -9,7 +9,7 @@ url: "https://github.com/brenner-tobias/addon-cloudflared/"
 image: ghcr.io/brenner-tobias/cloudflared/{arch}
 init: false
 hassio_api: true
-hassio_role: admin
+hassio_role: manager
 arch:
   - aarch64
   - amd64
@@ -26,6 +26,7 @@ schema:
   additional_hosts:
     - hostname: str
       service: str
+      disableChunkedEncoding: bool?
   nginxproxymanager: bool?
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   reset_cloudflared_files: bool?

@@ -64,10 +64,13 @@ Example extended add-on configuration:
 external_hostname: "ha.example.com"
 tunnel_name: "homeassistant"
 additional_hosts:
+  - hostname: "router.example.com"
+    service: "http://192.168.1.1"
   - hostname: "diskstation.example.com"
-    service: "http://192.168.1.5"
+    service: "https://192.168.1.2:5001"
   - hostname: "website.example.com"
-    service: "http://192.168.1.2"
+    service: "http://192.168.1.3:8080"
+    disableChunkedEncoding: true
 nginxproxymanager: true
 log_level: "debug"
 ```
@@ -99,14 +102,22 @@ other systems like a diskstation, router or anything else.
 Like with the `external_hostname` of HomeAssistant, DNS entries at will be
 automatically created at Cloudflare.
 
+Add the (optional) `disableChunkedEncoding` option to a hostname, to disable
+chunked transfer encoding. This is useful if you are running a WSGI server,
+like Proxmox for example. Visit [Cloudflare Docs][disablechunkedencoding] for
+further information.
+
 Please find below an examplary entry for two additional hosts:
 
 ```yaml
 additional_hosts:
-  - hostname: "diskstation.example.com"
-    service: "http://192.168.1.2"
   - hostname: "router.example.com"
     service: "http://192.168.1.1"
+  - hostname: "diskstation.example.com"
+    service: "https://192.168.1.2:5001"
+  - hostname: "website.example.com"
+    service: "http://192.168.1.3:8080"
+    disableChunkedEncoding: true
 ```
 
 **Note**: _If you delete a hostname from the list, it will not be served
@@ -222,3 +233,4 @@ SOFTWARE.
 [freenom]: https://freenom.com
 [nginxproxymanager]: https://github.com/hassio-addons/addon-nginx-proxy-manager
 [tobias]: https://github.com/brenner-tobias
+[disablechunkedencoding]: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/configuration-file/ingress#disablechunkedencoding
