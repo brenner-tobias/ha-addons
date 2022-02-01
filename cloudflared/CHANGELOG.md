@@ -1,3 +1,7 @@
+## v0.2.5
+- Update Cloudflare to 2022.1.3
+- Add option to use Quick Tunnels
+
 ## v0.2.4
 - Add originRequest support for disableChunkedEncoding flag for additional_hosts
 - Change hassio_role from admin to manager
