@@ -1,0 +1,7 @@
+---
+channel: stable
+addons:
+  cloudflared:
+    repository: brenner-tobias/addon-cloudflared
+    target: cloudflared
+    image: ghcr.io/brenner-tobias/cloudflared/{arch}
