@@ -1,4 +1,4 @@
 ## What’s changed
-## 🐛 Bug fixes
+## 🚀 Enhancements
 
-- Fixed a bug where the HomeAssistant connection would not work if the hostname was changed to something other than "homeassistant"
+- Add-On now also works, if SSL is set-up for Home Assistant

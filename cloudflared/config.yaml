@@ -29,4 +29,4 @@ schema:
   tunnel_name: str
 slug: cloudflared
 url: https://github.com/brenner-tobias/addon-cloudflared/
-version: 0.4.2
+version: 0.4.3
