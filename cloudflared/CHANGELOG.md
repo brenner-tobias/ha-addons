@@ -1,5 +1,4 @@
 ## What’s changed
-## 🚀 Enhancements
+## 🐛 Bug fixes
 
-- Added validation of config using Cloudflared @brenner-tobias (#36)
-- Made validation strict to fail if catch_all_service and nginx_proxy_manager are both set @brenner-tobias (#37)
+- Fixed a bug where the HomeAssistant connection would not work if the hostname was changed to something other than "homeassistant"
