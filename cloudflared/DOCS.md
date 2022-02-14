@@ -67,9 +67,8 @@ restart your HomeAssistant instance.**
 Since HomeAssistant blocks requests from proxies / reverse proxies, you have to tell
 your instance to allow requests from the Cloudflared Add-on. The add-on runs locally,
 so HA has to trust the docker network. In order to do so, add the following lines
-to your /config/configuration.yaml and restart your HA instance.
-(if you need assistance changing the config, please follow the
-[Advanced Configuration Tutorial][advancedconfiguration]):
+to your `/config/configuration.yaml` (there is no need to adapt anything in these
+lines since the IP range of the docker network is always the same):
 
 **Note**: _Remember to restart Home Assistance when the configuration is changed._
 
@@ -79,6 +78,9 @@ http:
   trusted_proxies:
     - 172.30.33.0/24
 ```
+
+If you need assistance changing the config, please follow the
+[Advanced Configuration Tutorial][advancedconfiguration].
 
 ### Add-on Configuration
 
@@ -209,6 +211,65 @@ tunnel_name: ""
 additional_hosts: []
 ```
 
+### Option: `data_folder`
+
+The `data_folder` option allows to change default storage
+location (`/data`) for the automatically created `cert.pem` and
+`tunnel.json` file.`
+
+Possible values are:
+
+- `config`: Files will be stored in /config/cloudflared.
+- `share`: Files will be stored in /share/cloudflared.
+- `ssl`: Files will be stored in /ssl/cloudflared.
+
+```yam
+data_folder: ssl
+```
+
+The add-on takes care of moving the created files within the default location
+to the custom `data_folder` when adding the option after initial add-on setup.
+
+**Note**: There are currently no automations in place when changing
+from custom data folder to another custom data folder or back to default.
+You have to take care of moving the files accordingly.
+
+### Option: `custom_config`
+
+The `custom_config` option can be used to create a custom `config.yml`
+file to create more complex ingress configurations.
+
+The option can only be used in combination with the `data_folder` option.
+
+See [cloudflared documentation][cloudflared-ingress] for further details on
+the needed file structure and content options.
+
+For example: if you set `data_folder: ssl` the add-on will search for
+`/ssl/cloudflared/config.yml` when `custom_config: true`.
+
+Your file will be validated on add-on startup and all errors will be logged.
+
+For your custom config.yml you have to add values for `tunnel` and the tunnel
+credentials file. The tunnel credentials file is located in your
+`data_folder/cloudflared` and is named `tunnel.json`.
+
+The `tunnel.json` file contains your `<tunnel UUID>` as `TunnelID` attribute.
+
+```yaml
+---
+tunnel: <tunnel UUID>
+credentials-file: "/ssl/cloudflared/tunnel.json"
+ingress:
+  - hostname: homeassistant.example.com
+    service: http://homeassistant:8123
+    originRequest:
+      noTLSVerify: true
+```
+
+**Note**: If you use a custom `config.yml` file, `additional_hosts` and
+`external_hostname` options will be ignored. Make sure to add all needed
+services (e.g. a homeassistant ingress rule) inside `config.yml`.
+
 ### Option: `log_level`
 
 The `log_level` option controls the level of log output by the addon and can
@@ -299,3 +360,4 @@ SOFTWARE.
 [nginx_proxy_manager]: https://github.com/hassio-addons/addon-nginx-proxy-manager
 [tobias]: https://github.com/brenner-tobias
 [disablechunkedencoding]: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/configuration-file/ingress#disablechunkedencoding
+[cloudflared-ingress]: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/configuration-file/ingress

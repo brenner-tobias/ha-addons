@@ -1,4 +1,5 @@
 ## What’s changed
-## 🚀 Enhancements
+## ✨ New features
 
-- Add-On now also works, if SSL is set-up for Home Assistant
+- Support custom data location using `data_path` config option @elcajon (#44)
+- Add possibility to use a custom Cloudflared configuration @elcajon (#46)

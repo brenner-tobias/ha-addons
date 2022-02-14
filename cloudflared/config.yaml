@@ -10,10 +10,14 @@ hassio_api: true
 hassio_role: manager
 image: ghcr.io/brenner-tobias/cloudflared/{arch}
 init: false
+map:
+- ssl:rw
+- share:rw
+- config:rw
 name: Cloudflared
 options:
   additional_hosts: []
-  external_hostname: ''
+  external_hostname: null
   tunnel_name: homeassistant
 schema:
   additional_hosts:
@@ -21,6 +25,8 @@ schema:
     hostname: str
     service: str
   catch_all_service: str?
+  custom_config: bool?
+  data_folder: list(config|share|ssl)?
   external_hostname: str
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   nginx_proxy_manager: bool?
@@ -29,4 +35,4 @@ schema:
   tunnel_name: str
 slug: cloudflared
 url: https://github.com/brenner-tobias/addon-cloudflared/
-version: 0.4.3
+version: 0.5.0
