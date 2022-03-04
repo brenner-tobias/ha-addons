@@ -1,20 +1,8 @@
 ## What’s changed
-## 🐛 Bug fixes
-
-- Log enhancements @elcajon (#49)
-
-## 🚀 Enhancements
-
-- Pass homeassistant log level to cloudflared @elcajon (#48)
-- Improve auth successful message @felipecrs (#51)
-
-## 🧰 Maintenance
-
-- Add workflow for automatic Cloudflared updates @elcajon (#55)
+- ℹ️ Update Cloudflared to version 2022.3.0 @github-actions (#61)
 
 ## ⬆️ Dependency updates
 
-- Bump docker/login-action from 1.12.0 to 1.13.0 @dependabot (#52)
-- Update cloudflared to 2022.2.1 @elcajon (#53)
-- Update Cloudflared to 2022.2.2 @elcajon (#54)
-- Bump docker/login-action from 1.13.0 to 1.14.0 @dependabot (#56)
+- Bump docker/login-action from 1.14.0 to 1.14.1 @dependabot (#57)
+- Bump actions/checkout from 2.4.0 to 3 @dependabot (#58)
+- Bump frenck/action-addon-linter from 2.6 to 2.8 @dependabot (#60)
