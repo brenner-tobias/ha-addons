@@ -1,4 +1,14 @@
 ## What’s changed
-## 🐛 Bug fixes
+- ℹ️ Update Cloudflared to version 2022.3.1 @github-actions (#67)
 
-- Bugfix reading tunnel name from tunnel.json for changed setup since Cloudflared 2022.3.0 @elcajon (#64)
+## ✨ New features
+
+- Add Cloudflare Warp routing @elcajon (#65)
+
+## 📚 Documentation
+
+- Add warp routing documentation @elcajon (#66)
+
+## ⬆️ Dependency updates
+
+- Bump frenck/action-addon-information from 1.3.1 to 1.4 @dependabot (#68)

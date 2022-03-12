@@ -33,6 +33,10 @@ schema:
   quick_tunnel: bool?
   reset_cloudflared_files: bool?
   tunnel_name: str
+  warp_enable: bool?
+  warp_reset: bool?
+  warp_routes:
+  - str?
 slug: cloudflared
 url: https://github.com/brenner-tobias/addon-cloudflared/
-version: 0.5.3
+version: 0.6.0
