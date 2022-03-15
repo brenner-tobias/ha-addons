@@ -4,10 +4,11 @@ arch:
 - armhf
 - armv7
 - i386
+codenotary: dev@brenner.tech
 description: Use a Cloudflared tunnel (formerly Argo Tunnel) to remotely connect to
   Home Assistant without opening any ports
 hassio_api: true
-hassio_role: manager
+hassio_role: homeassistant
 image: ghcr.io/brenner-tobias/cloudflared/{arch}
 init: false
 map:
@@ -39,4 +40,4 @@ schema:
   - str?
 slug: cloudflared
 url: https://github.com/brenner-tobias/addon-cloudflared/
-version: 0.6.0
+version: 0.7.0

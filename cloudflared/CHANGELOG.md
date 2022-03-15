@@ -1,14 +1,17 @@
 ## What’s changed
-- ℹ️ Update Cloudflared to version 2022.3.1 @github-actions (#67)
+## 🚨 Breaking change 🚨
 
-## ✨ New features
+It is now mandatory to add the option `warp_routes` if `warp_enable` is set to `true`, 
+otherwise the add on will not start.
 
-- Add Cloudflare Warp routing @elcajon (#65)
+You can safely ignore this if you don't use the Cloudflare Warp functionality. 
 
-## 📚 Documentation
+- Remove Manager API calls @elcajon (#72)
 
-- Add warp routing documentation @elcajon (#66)
+## 🚀 Enhancements
+
+- Add image signing - CAS Codenotary @elcajon (#69)
 
 ## ⬆️ Dependency updates
 
-- Bump frenck/action-addon-information from 1.3.1 to 1.4 @dependabot (#68)
+- Bump docker/build-push-action from 2.9.0 to 2.10.0 @dependabot (#70)
