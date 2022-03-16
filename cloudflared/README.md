@@ -19,9 +19,6 @@ connection.
 DNS servers of Cloudflare. If you do not have one, you can get one for free at
 [Freenom][freenom] following [this article][domainarticle].**
 
-**Note**: _This add-on needs the Admin API role in order to get the internal
-IP of Nginx Proxy Manager, in case it is used with the tunnel._
-
 ## Disclaimer
 
 Please make sure to be compliant with the
@@ -34,6 +31,6 @@ mainly streaming videos or other Non-HTML content.
 [domainarticle]: https://www.linkedin.com/pulse/what-do-domain-name-how-get-one-free-tobias-brenner?trk=public_post-content_share-article
 [freenom]: https://freenom.com
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2022.svg
-[project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [releases-shield]: https://img.shields.io/github/v/release/brenner-tobias/addon-cloudflared?include_prereleases
 [releases]: https://github.com/brenner-tobias/addon-cloudflared/releases
