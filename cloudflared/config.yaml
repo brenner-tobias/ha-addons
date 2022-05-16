@@ -18,8 +18,9 @@ map:
 name: Cloudflared
 options:
   additional_hosts: []
-  external_hostname: null
+  external_hostname: ''
   tunnel_name: homeassistant
+  tunnel_token: ''
 schema:
   additional_hosts:
   - disableChunkedEncoding: bool?
@@ -28,16 +29,17 @@ schema:
   catch_all_service: str?
   custom_config: bool?
   data_folder: list(config|share|ssl)?
-  external_hostname: str
+  external_hostname: str?
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   nginx_proxy_manager: bool?
   quick_tunnel: bool?
   reset_cloudflared_files: bool?
-  tunnel_name: str
+  tunnel_name: str?
+  tunnel_token: str?
   warp_enable: bool?
   warp_reset: bool?
   warp_routes:
   - str?
 slug: cloudflared
 url: https://github.com/brenner-tobias/addon-cloudflared/
-version: 1.0.5
+version: 2.0.0
