@@ -1,10 +1,7 @@
 ## What’s changed
-
-## 🐛 Bug fixes
-
-- 🐛 Update AppArmor for Cloudflared service & s6-overlay v3 @elcajon (#108)
+- ℹ️ Update Cloudflared to version 2022.6.3 @github-actions (#114)
 
 ## ⬆️ Dependency updates
 
-- ⬆️ Update Base image to v.12.0.0 @elcajon (#106)
-- ⬆️ Update Cloudflared to version 2022.6.1 @github-actions (#109)
+- Bump frenck/action-addon-linter from 2.8 to 2.9 @dependabot (#112)
+- ℹ️ Update Cloudflared to version 2022.6.2 @github-actions (#113)
