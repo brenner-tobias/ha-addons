@@ -19,14 +19,11 @@ Adding this add-ons repository to your Home Assistant instance is
 pretty straightforward. In the Home Assistant add-on store,
 a possibility to add a repository is provided.
 
-Use the following URL to add this repository: 
+Use the following URL to add this repository:
 
 ```txt
 https://github.com/brenner-tobias/ha-addons
 ```
-
-### Community Installation & Usage Videos 
-Free Cloudflare Tunnel To Home Assistant: Full Tutorial! - <https://youtu.be/4svVZGRMrsM>
 
 ## Add-ons provided by this repository
 
