@@ -1,7 +1,8 @@
 ## What’s changed
-- ℹ️ Update Cloudflared to version 2022.6.3 @github-actions (#114)
+- ℹ️ Update Cloudflared to version 2022.7.1 @github-actions (#120)
 
-## ⬆️ Dependency updates
+## 🧰 Maintenance
 
-- Bump frenck/action-addon-linter from 2.8 to 2.9 @dependabot (#112)
-- ℹ️ Update Cloudflared to version 2022.6.2 @github-actions (#113)
+- Add bug report form @elcajon (#117)
+- Change issue template file extension @elcajon (#118)
+- Update bug_report.yml @elcajon (#119)
