@@ -1,8 +1,9 @@
 ## What’s changed
-- ℹ️ Update Cloudflared to version 2022.7.1 @github-actions (#120)
+## 📚 Documentation
 
-## 🧰 Maintenance
+- Add section with workaround for revoking cert.pem @galbatoriz (#128)
 
-- Add bug report form @elcajon (#117)
-- Change issue template file extension @elcajon (#118)
-- Update bug_report.yml @elcajon (#119)
+## ⬆️ Dependency updates
+
+- Bump frenck/action-yamllint from 1.1 to 1.2 @dependabot (#124)
+- Bump docker/build-push-action from 3.0.0 to 3.1.0 @dependabot (#126)
