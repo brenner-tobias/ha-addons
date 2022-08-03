@@ -1,9 +1,14 @@
 ## What’s changed
-## 📚 Documentation
+## 🐛 Bug fixes
 
-- Add section with workaround for revoking cert.pem @galbatoriz (#128)
+- Remove custom apparmor.txt | fixes issue on Ubuntu Supervised installations @elcajon (#138)
+
+## 🚀 Enhancements
+
+- Log error message if tunnel name doesn't fit  @elcajon (#132)
 
 ## ⬆️ Dependency updates
 
-- Bump frenck/action-yamllint from 1.1 to 1.2 @dependabot (#124)
-- Bump docker/build-push-action from 3.0.0 to 3.1.0 @dependabot (#126)
+- ⬆️ Update yq to 4.25.1-r2 @elcajon (#133)
+- ⬆️ Update base image to v12.2.2 @elcajon (#134)
+- ⬆️ Update yq to 4.25.1-r3 @elcajon (#137)
