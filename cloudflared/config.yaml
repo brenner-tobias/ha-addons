@@ -42,4 +42,5 @@ schema:
   - str?
 slug: cloudflared
 url: https://github.com/brenner-tobias/addon-cloudflared/
-version: 2.0.7
+version: 2.0.8
+watchdog: http://[HOST]:36500/healthcheck

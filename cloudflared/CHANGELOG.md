@@ -1,8 +1,17 @@
 ## What’s changed
+
+⚠️ This update should fix supervisor watchdog functionality not working correctly. 
+
+## ⬆️ Dependencies
+
+- Update Cloudflared to version 2022.8.0 @github-actions (#144)
+
+## 🐛 Bug fixes
+
+- Add watchdog URL @elcajon (#143)
+- Bugfix watchdog regex @elcajon (#145)
+- Add exit code to finish script for watchdog @elcajon (#147)
+
 ## 🚀 Enhancements
 
-- Healthcheck for HA cloudflare tunnel if connection is dropped @elcajon (#139)
-
-## ⬆️ Dependency updates
-
-- Bump docker/build-push-action from 3.1.0 to 3.1.1 @dependabot (#140)
+- Add watchdog URL @elcajon (#143)
