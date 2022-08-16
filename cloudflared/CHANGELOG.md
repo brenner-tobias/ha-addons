@@ -1,8 +1,4 @@
 ## What’s changed
-## 🐛 Bug fixes
+## 🚀 Enhancements
 
-- Watchdog - fix metrics server binding @elcajon (#151)
-
-## 📚 Documentation
-
-- Fix spelling of Cloudflare in heading. @chriscla (#150)
+- Optimize logging of healthcheck @brenner-tobias (#153)
