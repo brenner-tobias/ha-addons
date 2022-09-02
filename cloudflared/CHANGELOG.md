@@ -1,8 +1,12 @@
 ## What’s changed
 ## 🐛 Bug fixes
 
-- Change internet check to use netcat and not ping @brenner-tobias (#167)
+- Replace add-on healthcheck with new Cloudflared Version @elcajon (#171)
+
+## 🚀 Enhancements
+
+- Update cont-init.d scripts from base to s6 v3 with system health check @elcajon (#173)
 
 ## ⬆️ Dependency updates
 
-- ℹ️ Update Cloudflared to version 2022.8.4 @github-actions (#169)
+- ⬆️ Update base-image to v12.2.3 @elcajon (#172)
