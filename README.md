@@ -36,7 +36,7 @@ https://github.com/brenner-tobias/ha-addons
 ![Supports amd64 Architecture][cloudflared-amd64-shield]
 ![Supports i386 Architecture][cloudflared-i386-shield]
 
-Use a Cloudflared tunnel (formerly Argo Tunnel) to remotely connect to Home Assistant without opening any ports
+Use a Cloudflare Tunnel to remotely connect to Home Assistant without opening any ports
 
 [:books: Cloudflared add-on documentation][addon-doc-cloudflared]
 
