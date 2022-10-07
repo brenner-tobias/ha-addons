@@ -1,73 +1,87 @@
 # Home Assistant Add-on: Cloudflared
 
 Cloudflared connects your Home Assistant Instance via a secure tunnel to a domain
-or subdomain at Cloudflare. Doing that, you can expose your Home Assitant to the
-Internet without opening ports in your router. Additionally, you can utilize
-Cloudflare Teams, their Zero Trust platform to further secure your Home Assistant
+or subdomain at Cloudflare. This allows you to expose your Home Assistant
+instance and other services to the Internet without opening ports on your router.
+Additionally, you can utilize Cloudflare Zero Trust to further secure your
 connection.
-
-**To use this add-on, you have to own a domain name (e.g. example.com) and use the
-DNS servers of Cloudflare. If you do not have one, you can get one for free at
-[Freenom][freenom] following [this article][domainarticle].**
 
 ## Disclaimer
 
-Please make sure to be compliant with the
+Please make sure you comply with the
 [Cloudflare Self-Serve Subscription Agreement][cloudflare-sssa] when using this
-add-on. Especially [section 2.8][cloudflare-sssa-28] could be breached when
-mainly streaming videos or other Non-HTML content.
+add-on. For example [section 2.8][cloudflare-sssa-28] could be breached when
+streaming videos (e.g. Plex) or other non-HTML content.
 
-## Installation
-
-The installation of this add-on is pretty straightforward but requires some prerequisites
-and a manual step at the first set-up.
+## Initial setup
 
 ### Prerequisites
 
-1. Before starting, please make sure to remove all other add-ons or configuration
-   entries handling SSL certificates, domain names and so on (e.g. DuckDNS) and
-   restart your Home Assistant instance.
-1. If you don't yet have a working Cloudflare set-up:
-   Get a domain name and set-up Cloudflare. See section
-   [Domain Name and Cloudflare Set-Up](#domain-name-and-cloudflare-set-up) for details.
-1. **Decide whether to use a [local or managed tunnel][addon-remote-or-local].**
+1. A domain name (e.g. example.com) using Cloudflare for DNS. If you don't have
+   one see [Domain name and Cloudflare set up](#domain-name-and-cloudflare-set-up).
+1. Decide between a local tunnel (managed by the add-on) or a remote tunnel
+   (managed in Cloudflare's interface). [Learn more][addon-remote-or-local].
+1. This add-on should be [installed][addon-installation] but not started yet.
 
-### Initial Add-on Setup for local tunnels
+After completing the prerequisites, proceed below based on the type of tunnel you
+chose.
 
-The following instructions describe the minimum necessary steps to use this add-on:
+### Local tunnel add-on setup (recommended)
 
-1. Add the `http` integration settings to your HA-config as described [below](#configurationyaml).
-1. Set the `external_hostname` add-on option with your domain name or a subdomain
+In the following steps a Cloudflare Tunnel will be automatically created by the
+add-on to expose your Home Assistant instance.
+
+If you only want to expose other services, you can leave `external_hostname`
+empty and set `additional_hosts` as [shown below](#configuration).
+
+1. Add the `http` integration settings to your Home Assistant config as
+   [described below](#configurationyaml).
+1. Set the `external_hostname` add-on option to the domain name or subdomain
    that you want to use to access Home Assistant.
-1. (Optional) Change the `tunnel_name` add-on option (default: homeassistant).
-1. Start the "Cloudflared" add-on. **Any existing DNS entries matching your defined
-   `external_hostname` and `additional_hosts` will be overridden at Cloudflare**.
-1. Check the logs of the "Cloudflared" add-on and **follow the instruction to authenticate
-   at Cloudflare**.
+1. (Optional) Change the `tunnel_name` add-on option (default: `homeassistant`).
+1. Start the "Cloudflared" add-on. **This will overwrite any existing DNS entries
+   matching `external_hostname` or `additional_hosts`**.
+1. Check the logs of the "Cloudflared" add-on and **follow the instruction to
+   authenticate with Cloudflare**.
    You need to copy a URL from the logs and visit it to authenticate.
-1. A tunnel and a DNS entry will be created and show up in your Cloudflare DNS /
-   Teams dashboard.
 
-Please review the rest of this documentation for further information and more
-advanced configuration options.
+A tunnel will now have been created and show up in your Cloudflare Teams
+dashboard. Please review the additional configuration options listed below.
+
+### Remote tunnel add-on setup (advanced setups only)
+
+In the following steps you will manually create a Cloudflare Tunnel in the Zero
+Trust Dashboard and provide the token to the add-on.
+
+1. Add the `http` integration settings to your Home Assistant config as
+   [described below](#configurationyaml).
+1. Create a Cloudflare Tunnel in the Cloudflare Teams dashboard following
+   [this how-to][addon-remote-tunnel].
+1. Set `tunnel_token` add-on option to your [tunnel token][create-remote-managed-tunnel]
+   (all other configuration will be ignored).
+1. Start the "Cloudflared" add-on, check the logs to see whether everything went
+   as expected.
+
+The tunnel you created should now be associated with the Cloudflared add-on.
+The configuration options listed below are ignored when using a remote tunnel.
 
 ## Configuration
 
-There are more advanced configuration options this add-on provides.
-Please check the index below for further information.
+**These configuration options only apply to the local tunnel setup**. More
+advanced configurations can be achieved using the remote tunnel setup.
 
+- [`tunnel_name`](#option-tunnel_name)
 - [`additional_hosts`](#option-additional_hosts)
 - [`catch_all_service`](#option-catch_all_service)
 - [`nginx_proxy_manager`](#option-nginx_proxy_manager)
 - [`data_folder`](#option-data_folder)
 - [`custom_config`](#option-custom_config-advanced-option)
-- [`warp_enable`](#option-warp_enable-advanced-option)
-- [`warp_routes`](#option-warp_routes)
+- [`warp_enable (Deprecated)`](#option-warp_enable-advanced-option)
+- [`warp_routes (Deprecated)`](#option-warp_routes)
 - [`log_level`](#option-log_level)
-- [`warp_reset`](#option-warp_reset)
-- [`tunnel_token`](#option-tunnel_token)
+- [`warp_reset (Deprecated)`](#option-warp_reset)
 
-### Overview: Add-on Configuration
+### Overview: Add-on configuration
 
 **Note**: _Remember to restart the add-on when the configuration is changed._
 
@@ -75,7 +89,6 @@ Example basic add-on configuration:
 
 ```yaml
 external_hostname: "ha.example.com"
-tunnel_name: "homeassistant"
 additional_hosts: []
 ```
 
@@ -83,7 +96,6 @@ Example extended add-on configuration:
 
 ```yaml
 external_hostname: "ha.example.com"
-tunnel_name: "homeassistant"
 additional_hosts:
   - hostname: "router.example.com"
     service: "http://192.168.1.1"
@@ -101,6 +113,17 @@ warp_routes:
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
 
+### Option: `tunnel_name`
+
+If you want to change the default tunnel name to something different than
+"homeassistant", you can do so by using this option.
+
+**Note**: _The tunnel name needs to be unique in your Cloudflare account._
+
+```yaml
+tunnel_name: "myHomeAssistant"
+```
+
 ### Option: `additional_hosts`
 
 You can use the internal reverse proxy of Cloudflare Tunnel to define additional
@@ -115,7 +138,7 @@ chunked transfer encoding. This is useful if you are running a WSGI server,
 like Proxmox for example. Visit [Cloudflare Docs][disablechunkedencoding] for
 further information.
 
-Please find below an examplary entry for three additional hosts:
+Please find below an example entry for three additional hosts:
 
 ```yaml
 additional_hosts:
@@ -130,7 +153,7 @@ additional_hosts:
 
 **Note**: _If you delete a hostname from the list, it will not be served
 anymore. Nevertheless, you should also manually delete the DNS entry from
-Cloudflare since it can not be deleted by the Add-on._
+Cloudflare since it can not be deleted by the add-on._
 
 ### Option: `catch_all_service`
 
@@ -139,8 +162,8 @@ If you want to forward all requests from any hostnames not defined in the
 define a URL to forward to. For example, this can be used for reverse proxies.
 
 **Note**: _If you want to use the HA add-on [Nginx Proxy Manager][nginx_proxy_manager]
-as reverse proxy, you should set the flag `nginx_proxy_manager` (see
-[below](#option-nginx_proxy_manager)) and not use this option._
+as reverse proxy, you should set the flag `nginx_proxy_manager` ([see
+below](#option-nginx_proxy_manager)) and not use this option._
 
 ```yaml
 catch_all_service: "http://192.168.1.100"
@@ -157,7 +180,7 @@ or directly to the tunnel URL that you can get from the CNAME entry of
 
 ### Option: `nginx_proxy_manager`
 
-If you want to use Cloudflare Tunnel with the Add-on
+If you want to use Cloudflare Tunnel with the add-on
 [Nginx Proxy Manager][nginx_proxy_manager], you can do so by setting this option.
 It will automatically set the catch_all_service to the internal URL of Nginx Proxy
 Manager. You do not have to add the option `catch_all_service` to your config (if
@@ -241,6 +264,10 @@ services (e.g. a homeassistant ingress rule) inside `config.yml`.
 
 ### Option: `warp_enable` (advanced option)
 
+**Deprecated**: Please note that this option is deprecated and will be
+removed soon. We strongly suggest to migrate to Cloudflare Managed Tunnels
+in your Zero Trust dashboard.
+
 If you want to route your home network(s) you can set this option to
 `true`. This will enable proxying network traffic through your tunnel.
 
@@ -259,6 +286,10 @@ An excerpt from the above documentation:
 
 ### Option: `warp_routes`
 
+**Deprecated**: Please note that this option is deprecated and will be
+removed soon. We strongly suggest to migrate to Cloudflare Managed Tunnels
+in your Zero Trust dashboard.
+
 This option controls which routes will be added to your tunnel.
 
 This option is mandatory if `warp_enable` is set to `true`.
@@ -276,22 +307,6 @@ warp_routes:
 **Note**: _By default, Cloudflare Zero Trust excludes traffic for private
 address spaces (RFC 191), you need to adapt the
 [Split Tunnel][cloudflared-route-st] configuration._
-
-### Option: `tunnel_token`
-
-If you created a Cloudflare Tunnel from the Zero Trust Dashboard, you can provide
-your tunnel token to connect to your remote managed tunnel.
-Keep in mind, when using this option, that you need to configure all
-hosts (including Home Assistant) by yourself.
-Set `tunnel_token` to your [tunnel token][create-remote-managed-tunnel],
-all other configuration will be ignored. After starting the addon, check the
-logs to see whether everything went as expected.
-
-Check out [this how-to][addon-remote-tunnel] to get a step by step
-guide on how to set up a remote managed tunnel with this add-on.
-
-Please note that you still have to add the `http` integration settings to your
-HA-config as described [here](#configurationyaml).
 
 ### Option: `log_level`
 
@@ -319,6 +334,10 @@ you are troubleshooting.
 
 ### Option: `warp_reset`
 
+**Deprecated**: Please note that this option is deprecated and will be
+removed soon. We strongly suggest to migrate to Cloudflare Managed Tunnels
+in your Zero Trust dashboard if you are using this option.
+
 In case something went wrong or you no longer want to use this add-on to
 route your networks, you can reset warp related settings by setting this option
 to `true`.
@@ -335,14 +354,13 @@ removed from the add-on configuration._
 
 ### configuration.yaml
 
-Since Home Assistant blocks requests from proxies / reverse proxies, you have to
+Since Home Assistant blocks requests from proxies/reverse proxies, you need to
 tell your instance to allow requests from the Cloudflared add-on. The add-on runs
 locally, so HA has to trust the docker network. In order to do so, add the
-following lines to your `/config/configuration.yaml` (there is no need to adapt
-anything in these lines since the IP range of the docker network is always the
-same):
+following lines to your `/config/configuration.yaml`:
 
-**Note**: _Remember to restart Home Assistant when the configuration is changed._
+**Note**: _There is no need to adapt anything in these lines since the IP range
+of the docker network is always the same._
 
 ```yaml
 http:
@@ -350,6 +368,8 @@ http:
   trusted_proxies:
     - 172.30.33.0/24
 ```
+
+Remember to restart Home Assistant when the configuration is changed.
 
 If you need assistance changing the config, please follow the
 [Advanced Configuration Tutorial][advancedconfiguration].
@@ -362,9 +382,9 @@ Make sure to add the [trusted proxy setting](#configurationyaml) correctly.
 Make sure to copy and paste the code snippet without adapting anything.
 There is no need to adapt IP ranges as the add-on is working as proxy.
 
-## Securing access to the Cloudflare account
+### Securing access to your Cloudflare account
 
-The add-on downloads after authentication a `cert.pem` file to authenticate
+The add-on downloads after authentication a `cert.pem` file to authenticate
 your instance of cloudflared against your Cloudflare account.
 You can not revoke access to this file from your Cloudflare account!
 The [issue](https://github.com/cloudflare/cloudflared/issues/93)
@@ -373,12 +393,12 @@ still persists.
 Workaround:
 
 1. Create a new Cloudflare account and invite it to your Cloudflare account
-   that manages your Domain:\
-   Cloudflare Dashboard -> Manage Account -> Members -> Invite Member
+   that manages your domain:\
+   `Cloudflare Dashboard -> Manage Account -> Members -> Invite Member`
 1. Instead of using your primary account to authenticate the tunnel,
    use your secondary account.
 
-If your `cert.pem` file is compromised, you can revoke your
+If your `cert.pem` file is compromised, you can revoke your
 secondary account from your primary account.
 
 ## Securing access to Home Assistant
@@ -393,15 +413,15 @@ You can also use Cloudflare Access to present an authentication page before user
 are able to access Home Assistant, see the
 [self-hosted applications][self-hosted-applications] docs.
 
-## Domain Name and Cloudflare Set-Up
+## Domain name and Cloudflare set up
 
 To use this plugin, you need a domain name that is using Cloudflare for its
 DNS entries.
 
-### Domain Name
+### Domain name
 
-If you do not already have a domain name, get one. You can get one at Freenom
-following [this article][domainarticle].
+If you do not already have a domain name, get one. You can get one at
+[Freenom][freenom] following [this article][domainarticle].
 
 ### Cloudflare
 
@@ -436,6 +456,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+[addon-installation]: https://github.com/brenner-tobias/addon-cloudflared#installation
 [advancedconfiguration]: https://www.home-assistant.io/getting-started/configuration/
 [cloudflare]: https://www.cloudflare.com/
 [cloudflare-sssa]: https://www.cloudflare.com/en-gb/terms/
