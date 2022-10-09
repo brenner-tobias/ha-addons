@@ -74,8 +74,8 @@ advanced configurations can be achieved using the remote tunnel setup.
 - [`additional_hosts`](#option-additional_hosts)
 - [`catch_all_service`](#option-catch_all_service)
 - [`nginx_proxy_manager`](#option-nginx_proxy_manager)
-- [`data_folder`](#option-data_folder)
-- [`custom_config`](#option-custom_config-advanced-option)
+- [`data_folder (Deprecated)`](#option-data_folder)
+- [`custom_config (Deprecated)`](#option-custom_config-advanced-option)
 - [`warp_enable (Deprecated)`](#option-warp_enable-advanced-option)
 - [`warp_routes (Deprecated)`](#option-warp_routes)
 - [`log_level`](#option-log_level)
@@ -205,6 +205,10 @@ them to wherever you like.
 
 ### Option: `data_folder`
 
+**Deprecated**: Please note that this option is deprecated and will be
+removed soon. We strongly suggest to migrate to Cloudflare Managed Tunnels
+in your Zero Trust dashboard.
+
 The `data_folder` option allows to change the default storage
 location (`/data`) for the automatically created `cert.pem` and
 `tunnel.json` file.
@@ -227,6 +231,10 @@ from custom data folder to another custom data folder or back to default.
 You have to take care of moving the files accordingly.
 
 ### Option: `custom_config` (advanced option)
+
+**Deprecated**: Please note that this option is deprecated and will be
+removed soon. We strongly suggest to migrate to Cloudflare Managed Tunnels
+in your Zero Trust dashboard.
 
 The `custom_config` option can be used to create a custom `config.yml`
 file to create more complex ingress configurations.

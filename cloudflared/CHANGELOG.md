@@ -1,21 +1,8 @@
 ## What’s changed
 
-Please be aware that the option to configure **warp** within the add-on is deprecated and will be removed soon. We suggest to migrate to Cloudflare Managed tunnels to use this configuration as soon as possible.
-
-## ✨ New features
-
-- Make external_hostname and tunnel_name optional @brenner-tobias (#203)
-
-## 🚀 Enhancements
-
-- Change options order to reflect the default options positions @brenner-tobias (#207)
+Please be aware that the options 'custom_config', 'data_folder' and 'warp_*' within the add-on are deprecated and will be removed soon. We suggest to migrate to Cloudflare Managed tunnels as soon as possible to use these ingress rules.
 
 ## 📚 Documentation
 
-- Docs tidy @AlecRust (#204)
-- Deprecate warp @brenner-tobias (#205)
-- Tidy docs @AlecRust (#208)
-
-## ⬆️ Dependency updates
-
-- ℹ️ Update Cloudflared to version 2022.10.0 @github-actions (#202)
+- Deprecate 'custom_config' @brenner-tobias (#211)
+- Deprecate 'data_folder' with automatic migration @brenner-tobias (#212)
