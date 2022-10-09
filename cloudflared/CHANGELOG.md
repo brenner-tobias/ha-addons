@@ -4,4 +4,4 @@ Please be aware that the options 'custom_config', 'data_folder' and 'warp_*' wit
 
 ## 🐛 Bug fixes
 
-- set data path for default migration @brenner-tobias (#213)
+- Add creation of dir if not existing @brenner-tobias (#214)
