@@ -32,4 +32,4 @@ schema:
   tunnel_token: str?
 slug: cloudflared
 url: https://github.com/brenner-tobias/addon-cloudflared/
-version: 4.0.0
+version: 4.0.1
