@@ -1,14 +1,9 @@
 ## What’s changed
-## 🧰 Maintenance
-
-- Change security reporting to Security Advisories @brenner-tobias (#247)
-
 ## 📚 Documentation
 
-- Add CODE_OF_CONDUCT.md and CONTRIBUTING.md @brenner-tobias (#244)
+- Clarify final URL in docs @AlecRust (#261)
 
 ## ⬆️ Dependency updates
 
-- ⬆️ Update base image to v12.2.6 @elcajon (#241)
-- ⬆️ Update base image to 12.2.7 @elcajon (#248)
-- ℹ️ Update Cloudflared to version 2022.11.0 @github-actions (#256)
+- Bump frenck/action-setup-cas from 0.1.0 to 0.1.1 @dependabot (#258)
+- ℹ️ Update Cloudflared to version 2022.11.1 @github-actions (#262)
