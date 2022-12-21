@@ -1,9 +1,14 @@
 ## What’s changed
-## 📚 Documentation
+## 🚀 Enhancements
 
-- Clarify final URL in docs @AlecRust (#261)
+- Improve Logging & remove legacy check for old configurations @brenner-tobias (#267)
+
+## 🧰 Maintenance
+
+- Update CI @elcajon (#273)
 
 ## ⬆️ Dependency updates
 
-- Bump frenck/action-setup-cas from 0.1.0 to 0.1.1 @dependabot (#258)
-- ℹ️ Update Cloudflared to version 2022.11.1 @github-actions (#262)
+- ⬆️ Update base image to v13.0.0 @elcajon (#266)
+- Bump actionshub/markdownlint from 2.0.2 to 2.1.2 @dependabot (#269)
+- ⬆️ Update cloudflare/cloudflared to version 2022.12.1 @github-actions (#275)
