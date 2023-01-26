@@ -66,7 +66,7 @@ For a general repository issue or add-on ideas [open an issue here][issue]
 
 MIT License
 
-Copyright (c) 2022 Tobias Brenner
+Copyright (c) 2023 Tobias Brenner
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -99,6 +99,6 @@ SOFTWARE.
 [gitlabci]: https://gitlab.com/brenner-tobias/ha-addons/pipelines
 [issue]: https://github.com/brenner-tobias/ha-addons/issues
 [license-shield]: https://img.shields.io/github/license/brenner-tobias/ha-addons.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2022.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [semver]: http://semver.org/spec/v2.0.0.html
