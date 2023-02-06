@@ -1,9 +1,8 @@
 ## What’s changed
-## 📚 Documentation
-
-- Remove Freenom since their domain names seems not to be working anymore @brenner-tobias (#307)
-
 ## ⬆️ Dependency updates
 
-- Bump frenck/action-addon-linter from 2.10 to 2.11 @dependabot (#300)
-- Update base image to v13.1.1 @elcajon (#301)
+- Bump ludeeus/action-shellcheck from 1.1.0 to 2.0.0 @dependabot (#308)
+- Bump docker/setup-buildx-action from 2.2.1 to 2.3.0 @dependabot (#309)
+- Bump docker/setup-buildx-action from 2.3.0 to 2.4.0 @dependabot (#310)
+- Bump docker/build-push-action from 3.3.0 to 4.0.0 @dependabot (#311)
+- ⬆️ Update cloudflare/cloudflared to version 2023.2.1 @github-actions (#314)
