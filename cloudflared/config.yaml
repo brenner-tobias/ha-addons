@@ -1,35 +1,35 @@
+name: Cloudflared
+version: 4.0.13
+slug: cloudflared
+description: Use a Cloudflare Tunnel to remotely connect to Home Assistant without
+  opening any ports
+url: https://github.com/brenner-tobias/addon-cloudflared/
+codenotary: dev@brenner.tech
+init: false
+hassio_api: true
+hassio_role: homeassistant
 arch:
 - aarch64
 - amd64
 - armhf
 - armv7
 - i386
-codenotary: dev@brenner.tech
-description: Use a Cloudflare Tunnel to remotely connect to Home Assistant without
-  opening any ports
-hassio_api: true
-hassio_role: homeassistant
-image: ghcr.io/brenner-tobias/cloudflared/{arch}
-init: false
 map:
 - ssl:rw
 - share:rw
 - config:rw
-name: Cloudflared
 options:
-  additional_hosts: []
   external_hostname: ''
+  additional_hosts: []
 schema:
-  additional_hosts:
-  - disableChunkedEncoding: bool?
-    hostname: str
-    service: str
-  catch_all_service: str?
   external_hostname: str?
-  log_level: list(trace|debug|info|notice|warning|error|fatal)?
-  nginx_proxy_manager: bool?
+  additional_hosts:
+  - hostname: str
+    service: str
+    disableChunkedEncoding: bool?
   tunnel_name: str?
   tunnel_token: str?
-slug: cloudflared
-url: https://github.com/brenner-tobias/addon-cloudflared/
-version: 4.0.12
+  catch_all_service: str?
+  nginx_proxy_manager: bool?
+  log_level: list(trace|debug|info|notice|warning|error|fatal)?
+image: ghcr.io/brenner-tobias/cloudflared/{arch}
