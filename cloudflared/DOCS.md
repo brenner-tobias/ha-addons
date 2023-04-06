@@ -85,12 +85,12 @@ advanced config can be achieved using the remote tunnel setup.
 Example add-on configuration:
 
 ```yaml
-external_hostname: "ha.example.com"
+external_hostname: ha.example.com
 additional_hosts:
-  - hostname: "router.example.com"
-    service: "http://192.168.1.1"
-  - hostname: "website.example.com"
-    service: "http://192.168.1.3:8080"
+  - hostname: router.example.com
+    service: http://192.168.1.1
+  - hostname: website.example.com
+    service: http://192.168.1.3:8080
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
@@ -106,7 +106,7 @@ services.
 **Note**: _The tunnel name needs to be unique in your Cloudflare account._
 
 ```yaml
-external_hostname: "ha.example.com"
+external_hostname: ha.example.com
 ```
 
 ### Option: `additional_hosts`
@@ -127,12 +127,12 @@ Please find below an example entry for three additional hosts:
 
 ```yaml
 additional_hosts:
-  - hostname: "router.example.com"
-    service: "http://192.168.1.1"
-  - hostname: "diskstation.example.com"
-    service: "https://192.168.1.2:5001"
-  - hostname: "website.example.com"
-    service: "http://192.168.1.3:8080"
+  - hostname: router.example.com
+    service: http://192.168.1.1
+  - hostname: diskstation.example.com
+    service: https://192.168.1.2:5001
+  - hostname: website.example.com
+    service: http://192.168.1.3:8080
     disableChunkedEncoding: true
 ```
 
@@ -148,7 +148,21 @@ than the default of `homeassistant`.
 **Note**: _The tunnel name needs to be unique in your Cloudflare account._
 
 ```yaml
-tunnel_name: "myHomeAssistant"
+tunnel_name: myHomeAssistant
+```
+
+### Option: `post_quantum`
+
+If you want Cloudflared to use post-quantum cryptography for the tunnel,
+set this flag.
+
+**Note**: _When `post_quantum` is set, cloudflared restricts itself to QUIC
+transport for the tunnel connection. This might lead to problems for some users.
+Also, it will only allow post-quantum hybrid key exchanges and not fall back to
+a non post-quantum connection._
+
+```yaml
+post_quantum: true
 ```
 
 ### Option: `catch_all_service`
@@ -162,7 +176,7 @@ as reverse proxy, you should set the flag `nginx_proxy_manager` ([see
 below](#option-nginx_proxy_manager)) and not use this option._
 
 ```yaml
-catch_all_service: "http://192.168.1.100"
+catch_all_service: http://192.168.1.100
 ```
 
 **Note**: _This will still route your defined `external_hostname`to Home Assistant
@@ -173,6 +187,9 @@ In order to route hostnames through the tunnel, you have to create individual
 CNAME records in Cloudflare for all of them, pointing to your `external_hostname`
 or directly to the tunnel URL that you can get from the CNAME entry of
 `external_hostname`.
+
+Alternatively you can add a [wildcard DNS record](https://blog.cloudflare.com/wildcard-proxy-for-everyone/)
+in Cloudflare by adding a CNAME record with `*` as name.
 
 ### Option: `nginx_proxy_manager`
 
@@ -195,6 +212,9 @@ In order to route hostnames through the tunnel, you have to create individual
 CNAME records in Cloudflare for all of them, pointing to your `external_hostname`
 or directly to the tunnel URL that you can get from the CNAME entry of
 `external_hostname`.
+
+Alternatively you can add a [wildcard DNS record](https://blog.cloudflare.com/wildcard-proxy-for-everyone/)
+in Cloudflare by adding a CNAME record with `*` as name.
 
 Finally, you have to set-up your proxy hosts in Nginx Proxy Manager and forward
 them to wherever you like.
