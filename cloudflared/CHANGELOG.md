@@ -1,4 +1,4 @@
 ## What’s changed
-## 🐛 Bug fixes
+## ⬆️ Dependency updates
 
-- Revert Cloudflared to 2023.4.1 @brenner-tobias (#389)
+- ⬆️ Update cloudflare/cloudflared to v2023.5.0 @renovate (#392)
