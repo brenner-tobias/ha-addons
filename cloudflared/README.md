@@ -17,17 +17,15 @@ connection.
 
 **To use this add-on, you have to own a domain name (e.g. example.com) that is
 using Cloudflare for its DNS entries. You can find more information about that
-in our [Wiki][wiki]**
+in our [Wiki][wiki]**.
 
 ## Disclaimer
 
 Please make sure to be compliant with the
 [Cloudflare Self-Serve Subscription Agreement][cloudflare-sssa] when using this
-add-on. Especially [section 2.8][cloudflare-sssa-28] could be breached when
-mainly streaming videos or other Non-HTML content.
+add-on.
 
 [cloudflare-sssa]: https://www.cloudflare.com/terms/
-[cloudflare-sssa-28]: https://www.cloudflare.com/terms/#:~:text=2.8%20Limitation%20on%20Serving%20Non%2DHTML%20Content
 [domainarticle]: https://www.linkedin.com/pulse/what-do-domain-name-how-get-one-free-tobias-brenner?trk=public_post-content_share-article
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
