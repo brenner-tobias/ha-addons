@@ -1,7 +1,12 @@
 ## What’s changed
+## 🧰 Maintenance
+
+- Remove mapped folders @elcajon (#522)
+
 ## ⬆️ Dependency updates
 
-- ⬆️ Update Add-on base image to v14.3.0 @renovate (#511)
-- ⬆️ Update Add-on base image to v14.3.1 @renovate (#514)
-- ⬆️ Update Add-on base image to v14.3.1 @renovate (#515)
-- ⬆️ Update cloudflare/cloudflared to v2023.10.0 @renovate (#516)
+- ⬆️ Update frenck/action-addon-linter action to v2.14 @renovate (#521)
+- ⬆️ Update frenck/action-addon-linter action to v2.15 @renovate (#523)
+- ⬆️ Update Add-on base image to v14.3.2 @renovate (#524)
+- ⬆️ Update Add-on base image to v14.3.2 @renovate (#525)
+- ⬆️ Update docker/build-push-action action to v5.1.0 @renovate (#526)
