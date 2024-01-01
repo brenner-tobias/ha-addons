@@ -66,7 +66,7 @@ For a general repository issue or add-on ideas [open an issue here][issue]
 
 MIT License
 
-Copyright (c) 2024 Tobias Brenner
+Copyright (c) 2023 Tobias Brenner
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -92,13 +92,13 @@ SOFTWARE.
 [cloudflared-version-shield]: https://img.shields.io/badge/version-v4.2.12-blue.svg
 [cloudflared-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [cloudflared-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[cloudflared-armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
+[cloudflared-armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
 [cloudflared-armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[cloudflared-i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
+[cloudflared-i386-shield]: https://img.shields.io/badge/i386-no-red.svg
 [gitlabci-shield]: https://gitlab.com/brenner-tobias/ha-addons/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/brenner-tobias/ha-addons/pipelines
 [issue]: https://github.com/brenner-tobias/ha-addons/issues
 [license-shield]: https://img.shields.io/github/license/brenner-tobias/ha-addons.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [semver]: http://semver.org/spec/v2.0.0.html
