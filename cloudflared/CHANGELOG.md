@@ -1,5 +1,9 @@
 ## What’s changed
+## ✨ New features
+
+- Add run_parameters @brenner-tobias (#573)
+- Add add-on config folder mapping @elcajon (#578)
+
 ## ⬆️ Dependency updates
 
-- ⬆️ Update Add-on base image to v15.0.5 @renovate (#570)
-- ⬆️ Update cloudflare/cloudflared to v2024.1.3 @renovate (#571)
+- ⬆️ Update cloudflare/cloudflared to v2024.1.4 @renovate (#577)
