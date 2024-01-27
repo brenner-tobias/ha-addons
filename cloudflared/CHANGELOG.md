@@ -1,9 +1,5 @@
 ## What’s changed
-## ✨ New features
-
-- Add run_parameters @brenner-tobias (#573)
-- Add add-on config folder mapping @elcajon (#578)
-
 ## ⬆️ Dependency updates
 
-- ⬆️ Update cloudflare/cloudflared to v2024.1.4 @renovate (#577)
+- ⬆️ Update peter-evans/repository-dispatch action to v3 @renovate (#579)
+- ⬆️ Update cloudflare/cloudflared to v2024.1.5 @renovate (#580)
