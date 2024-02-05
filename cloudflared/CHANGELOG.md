@@ -1,5 +1,8 @@
 ## What’s changed
+## 🚀 Enhancements
+
+- Add --ha-connections tunnel run option @elcajon (#587)
+
 ## ⬆️ Dependency updates
 
-- ⬆️ Update peter-evans/repository-dispatch action to v3 @renovate (#579)
-- ⬆️ Update cloudflare/cloudflared to v2024.1.5 @renovate (#580)
+- ⬆️ Update Add-on base image to v15.0.6 @renovate (#585)
