@@ -1,8 +1,8 @@
 ## What’s changed
-## 🚀 Enhancements
+## 📚 Documentation
 
-- Add --ha-connections tunnel run option @elcajon (#587)
+- Documentation improvements @elcajon (#589)
 
 ## ⬆️ Dependency updates
 
-- ⬆️ Update Add-on base image to v15.0.6 @renovate (#585)
+- ⬆️ Update cloudflare/cloudflared to v2024.2.0 @renovate (#594)
