@@ -234,6 +234,7 @@ Valid parameters to add are:
 - --edge-ip-version
 - --grace-period
 - --logfile
+- --loglevel
 - --pidfile
 - --protocol
 - --region
@@ -255,6 +256,7 @@ as root. This path can be accessed, for example, via the VS-code add-on via
 run_parameters:
   - "--region=us"
   - "--protocol=http2"
+  - "--loglevel=debug"
 ```
 
 ### Option: `log_level`
@@ -262,6 +264,9 @@ run_parameters:
 The `log_level` option controls the level of log output by the addon and can
 be changed to be more or less verbose, which might be useful when you are
 dealing with an unknown issue.
+
+**Note**: _If you want to change the log level of the tunnel itself you can
+use the `run_parameters` `--loglevel` option._
 
 ```yaml
 log_level: debug

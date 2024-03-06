@@ -1,10 +1,9 @@
 ## What’s changed
-## 📚 Documentation
+## 🚀 Enhancements
 
-- Add Freenom documentation @brenner-tobias (#599)
+- Add --loglevel as valid run_parameter @elcajon (#608)
+- Refactor log level logic @elcajon (#609)
 
 ## ⬆️ Dependency updates
 
-- ⬆️ Update Add-on base image to v15.0.7 @renovate (#598)
-- ⬆️ Update frenck/action-yamllint action to v1.5 @renovate (#601)
-- ⬆️ Update cloudflare/cloudflared to v2024.2.1 @renovate (#603)
+- ⬆️ Update docker/setup-buildx-action action to v3.1.0 @renovate (#604)
