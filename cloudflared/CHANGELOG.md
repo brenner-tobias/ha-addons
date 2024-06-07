@@ -1,9 +1,11 @@
 ## What’s changed
-## 🧰 Maintenance
+## 📚 Documentation
 
-- Change runtime to avoid peek time and rate limits @brenner-tobias (#634)
-- Bugfix CI lock cron schedule @elcajon (#635)
+- Fix troubleshooting link @brenner-tobias (#646)
 
 ## ⬆️ Dependency updates
 
-- ⬆️ Update cloudflare/cloudflared to v2024.5.0 @renovate (#636)
+- ⬆️ Update Add-on base image to v15.0.9 @renovate (#638)
+- ⬆️ Update Add-on base image to v16 (major) @renovate (#640)
+- ⬆️ Update docker/login-action action to v3.2.0 @renovate (#645)
+- ⬆️ Update cloudflare/cloudflared to v2024.6.0 @renovate (#649)
