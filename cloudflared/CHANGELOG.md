@@ -1,11 +1,9 @@
 ## What’s changed
 ## 📚 Documentation
 
-- Fix troubleshooting link @brenner-tobias (#646)
+-  Add Hebrew translation @tzagim (#656)
 
 ## ⬆️ Dependency updates
 
-- ⬆️ Update Add-on base image to v15.0.9 @renovate (#638)
-- ⬆️ Update Add-on base image to v16 (major) @renovate (#640)
-- ⬆️ Update docker/login-action action to v3.2.0 @renovate (#645)
-- ⬆️ Update cloudflare/cloudflared to v2024.6.0 @renovate (#649)
+- ⬆️ Update Add-on base image to v16.0.1 @renovate (#651)
+- ⬆️ Update docker/build-push-action action to v5.4.0 @renovate (#653)
