@@ -1,8 +1,8 @@
 ## What’s changed
 ## ⬆️ Dependency updates
 
-- ⬆️ Update Add-on base image to v16.3.0 @renovate (#699)
-- ⬆️ Update cloudflare/cloudflared to v2024.9.0 @renovate (#700)
-- ⬆️ Update frenck/action-addon-linter action to v2.16 @renovate (#701)
-- ⬆️ Update cloudflare/cloudflared to v2024.9.1 @renovate (#702)
-- ⬆️ Update Add-on base image to v16.3.1 @renovate (#703)
+- ⬆️ Update docker/build-push-action action to v6.8.0 @renovate (#707)
+- ⬆️ Update frenck/action-addon-linter action to v2.17 @renovate (#708)
+- ⬆️ Update docker/build-push-action action to v6.9.0 @renovate (#709)
+- ⬆️ Update Add-on base image to v16.3.2 @renovate (#710)
+- ⬆️ Update docker/setup-buildx-action action to v3.7.0 @renovate (#711)
