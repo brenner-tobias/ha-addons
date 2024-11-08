@@ -1,8 +1,4 @@
 ## What’s changed
-## ✨ New features
+## ⬆️ Dependency updates
 
-- Expose metrics port @brenner-tobias (#729)
-
-## 📚 Documentation
-
-- Add Commit Shield to README @brenner-tobias (#727)
+- ⬆️ Update cloudflare/cloudflared to v2024.11.0 @renovate (#733)
