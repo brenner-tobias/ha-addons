@@ -1,4 +1,5 @@
 ## What’s changed
 ## ⬆️ Dependency updates
 
-- ⬆️ Update cloudflare/cloudflared to v2024.11.0 @renovate (#733)
+- ⬆️ Update Add-on base image to v16.3.6 @renovate (#737)
+- ⬆️ Update cloudflare/cloudflared to v2024.11.1 @renovate (#738)
