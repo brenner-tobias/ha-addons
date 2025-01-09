@@ -1,8 +1,6 @@
 ## What’s changed
-## 📚 Documentation
-
-- 🎆 Happy New Year 2025 - Update maintenance & license @elcajon (#757)
-
 ## ⬆️ Dependency updates
 
-- ⬆️ Update Add-on base image to v17.0.2 @renovate (#761)
+- ⬆️ Update cloudflare/cloudflared to 2025.1.0 @renovate (#763)
+- ⬆️ Update docker/build-push-action action to v6.11.0 @renovate (#764)
+- ⬆️ Update docker/setup-qemu-action action to v3.3.0 @renovate (#765)
