@@ -1,0 +1,47 @@
+---
+configuration:
+  log_level:
+    name: Nivel de Registro
+    description: >-
+      Define el nivel de registro para el complemento.
+  external_hostname:
+    name: Nombre del Host Externo de Home Assistant
+    description: >-
+      Establece esto como tu nombre de dominio o subdominio que quieres usar para
+      acceder a Home Assistant.
+  tunnel_name:
+    name: Nombre del Túnel de Cloudflare
+    description: >-
+      Define el nombre del túnel creado para la comunicación entre
+      este servicio y el servidor de borde de Cloudflare. El valor por defecto debería
+      ser adecuado en la mayoría de los casos.
+  additional_hosts:
+    name: Hosts Adicionales
+    description: >-
+      Define una lista de hosts adicionales que serán enrutados por el Túnel de Cloudflare.
+  post_quantum:
+    name: Usar Criptografía Post-Cuántica
+    description: >-
+      Marca esta opción para hacer que el túnel use Criptografía Post-Cuántica. Advertencia: Esto
+      también restringe el túnel a QUIC, lo que podría causar problemas
+      para algunos usuarios.
+  run_parameters:
+    name: Añadir parámetros de ejecución
+    description: >-
+      Posibilidad de agregar parámetros de ejecución a Cloudflared.
+  catch_all_service:
+    name: Servicio Catch-All
+    description: >-
+      Define un servicio catch-all que será llamado para servicios no
+      configurados directamente.
+  nginx_proxy_manager:
+    name: Habilitar Nginx-Proxy-Manager Catch-All
+    description: >-
+      Establece el servicio catch-all en el complemento "Nginx-Proxy-Manager Community Add-Ons".
+  tunnel_token:
+    name: Token del Túnel de Cloudflare
+    description: >-
+      Cuando se establece, todas las demás opciones serán ignoradas. Usa esta opción si configuraste
+      el túnel con el panel de Cloudflare.
+network:
+  36500/tcp: Interfaz Web de Métricas (36500/tcp)
