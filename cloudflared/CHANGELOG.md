@@ -1,24 +1,13 @@
-## What’s changed
-## 🐛 Bug fixes
+## What's Changed
 
-- Update log message  @Christalsoldier (#891)
+### BREAKING CHANGES
 
-## 🚀 Enhancements
+The add-on reads your `configuration.yaml` to detect your Home Assistant port and if SSL is used. **If you have changed the default port or
+enabled SSL in the HTTP integration**, you must keep the entire `http:` block directly in `configuration.yaml`. Do **not** move it to a
+`!include` file or a `!include_dir_*` directory, as the add-on does not follow additional YAML files.
 
-- Refactor add-on @felipecrs (#881)
-- Avoid starting NGINX proxy if user disabled it @felipecrs (#882)
-- Avoid waiting for Home Assistant before starting add-on @felipecrs (#870)
+### Bug Fixes
 
-## 🧰 Maintenance
+* Fix add-on not properly detecting when HA is using HTTPS by @felipecrs in https://github.com/brenner-tobias/addon-cloudflared/pull/898
 
-- Fix Cloudflared updates in Renovate @felipecrs (#883)
-
-## 📚 Documentation
-
-- Document that http in configuration.yaml must no use !include or packages @felipecrs (#886)
-
-## ⬆️ Dependency updates
-
-- ⬆️ Update cloudflared to v2025.8.0 @[renovate[bot]](https://github.com/apps/renovate) (#884)
-- ⬆️ Update actions/checkout action to v5 @[renovate[bot]](https://github.com/apps/renovate) (#889)
-- ⬆️ Update cloudflared to v2025.8.1 @[renovate[bot]](https://github.com/apps/renovate) (#895)
+**Full Changelog**: https://github.com/brenner-tobias/addon-cloudflared/compare/v5.3.7...v5.3.8
