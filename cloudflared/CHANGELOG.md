@@ -1,4 +1,5 @@
 ## What’s changed
-## 🐛 Bug fixes
+## 🚀 Enhancements
 
-- Fix resolving Home Assistant port before it starts @felipecrs (#920)
+- Refactor global vars, config check, and additional hosts handling @felipecrs (#921)
+- Avoid parsing HA config if not needed (external_hostname unset) @felipecrs (#922)
