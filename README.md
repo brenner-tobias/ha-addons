@@ -93,7 +93,7 @@ SOFTWARE.
 [cloudflared-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [cloudflared-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [cloudflared-armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
-[cloudflared-armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
+[cloudflared-armv7-shield]: https://img.shields.io/badge/armv7-no-red.svg
 [cloudflared-i386-shield]: https://img.shields.io/badge/i386-no-red.svg
 [gitlabci-shield]: https://gitlab.com/brenner-tobias/ha-addons/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/brenner-tobias/ha-addons/pipelines
