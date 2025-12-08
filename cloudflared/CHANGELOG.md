@@ -1,15 +1,13 @@
 ## What’s changed
-
-## 🚨 Breaking changes
-
-- 🚨⬆️ Remove armv7 support @elcajon (#946)
-
-## 🐛 Bug fixes
-
-- Workaround codenotary / build.yaml issue @elcajon (#943)
-- Make build.yaml/json optional @elcajon (#944)
-
 ## 🧰 Maintenance
 
-- Make build.yaml/json optional @elcajon (#944)
-- Remove Codenotary remnants @elcajon (#938)
+- Update Add-on CI @elcajon (#949)
+- Update CI @elcajon (#951)
+
+## 📚 Documentation
+
+- Update docs @elcajon (#954)
+
+## ⬆️ Dependency updates
+
+- ⬆️ Update actions/checkout action to v6 @[renovate[bot]](https://github.com/apps/renovate) (#947)

@@ -1,12 +1,12 @@
 name: Cloudflared
-version: 7.0.0
+version: 7.0.1
 breaking_versions:
 - 5.3.7
 - 6.0.0
 slug: cloudflared
 description: Use a Cloudflare Tunnel to remotely connect to Home Assistant without
   opening any ports
-url: https://github.com/brenner-tobias/addon-cloudflared/
+url: https://github.com/homeassistant-apps/app-cloudflared
 startup: services
 init: false
 hassio_api: true
@@ -35,4 +35,4 @@ schema:
   run_parameters:
   - match(^(--edge-bind-address|--edge-ip-version|--grace-period|--ha-connections|--logfile|--loglevel|--pidfile|--protocol|--region|--retries|--tag)=.*$)?
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
-image: ghcr.io/brenner-tobias/cloudflared/{arch}
+image: ghcr.io/homeassistant-apps/cloudflared/{arch}
