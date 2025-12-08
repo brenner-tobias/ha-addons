@@ -25,7 +25,7 @@ a possibility to add a repository is provided.
 Use the following URL to add this repository:
 
 ```txt
-https://github.com/brenner-tobias/ha-addons
+https://github.com/homeassistant-apps/repository
 ```
 
 ## Apps (Add-ons) provided by this repository
