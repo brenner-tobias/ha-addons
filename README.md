@@ -33,11 +33,8 @@ https://github.com/homeassistant-apps/repository
 ### &#10003; [Cloudflared][addon-cloudflared]
 
 ![Latest Version][cloudflared-version-shield]
-![Supports armhf Architecture][cloudflared-armhf-shield]
-![Supports armv7 Architecture][cloudflared-armv7-shield]
 ![Supports aarch64 Architecture][cloudflared-aarch64-shield]
 ![Supports amd64 Architecture][cloudflared-amd64-shield]
-![Supports i386 Architecture][cloudflared-i386-shield]
 
 Use a Cloudflare Tunnel to remotely connect to Home Assistant without opening any ports
 
@@ -69,7 +66,7 @@ For a general repository issue or add-on ideas [open an issue here][issue]
 
 MIT License
 
-Copyright (c) 2025 [homeassistant-apps][github-org]
+Copyright (c) 2026 [homeassistant-apps][github-org]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -95,14 +92,11 @@ SOFTWARE.
 [cloudflared-version-shield]: https://img.shields.io/badge/version-v7.0.1-blue.svg
 [cloudflared-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [cloudflared-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[cloudflared-armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
-[cloudflared-armv7-shield]: https://img.shields.io/badge/armv7-no-red.svg
-[cloudflared-i386-shield]: https://img.shields.io/badge/i386-no-red.svg
 [gitlabci-shield]: https://gitlab.com/brenner-tobias/ha-addons/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/brenner-tobias/ha-addons/pipelines
 [issue]: https://github.com/brenner-tobias/ha-addons/issues
 [license-shield]: https://img.shields.io/github/license/brenner-tobias/ha-addons.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [semver]: http://semver.org/spec/v2.0.0.html
 [github-org]: https://github.com/homeassistant-apps

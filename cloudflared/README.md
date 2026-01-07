@@ -27,7 +27,7 @@ Please make sure to be compliant with the
 app (add-on).
 
 [cloudflare-sssa]: https://www.cloudflare.com/terms/
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [releases-shield]: https://img.shields.io/github/v/release/homeassistant-apps/app-cloudflared?include_prereleases
 [releases]: https://github.com/homeassistant-apps/app-cloudflared/releases
