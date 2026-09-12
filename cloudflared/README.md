@@ -1,4 +1,4 @@
-# Home Assistant App (Add-on): Cloudflared
+# Home Assistant App: Cloudflared
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -16,7 +16,7 @@ Internet without opening ports in your router. Additionally, you can utilize
 Cloudflare Teams, their Zero Trust platform to further secure your Home Assistant
 connection.
 
-**To use this app (add-on), you have to own a domain name (e.g. example.com) that is
+**To use this app, you have to own a domain name (e.g. example.com) that is
 using Cloudflare for its DNS entries. You can find more information about that
 in our [Wiki][wiki]**.
 
@@ -24,7 +24,7 @@ in our [Wiki][wiki]**.
 
 Please make sure to be compliant with the
 [Cloudflare Self-Serve Subscription Agreement][cloudflare-sssa] when using this
-app (add-on).
+app.
 
 [cloudflare-sssa]: https://www.cloudflare.com/terms/
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
